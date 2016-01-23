@@ -1,6 +1,6 @@
 # itc250-p2-foodtruck
-Project 2.  Group project.
-<h1>P2: Food Truck</h1>
+Group project P2: Food Truck  
+<h1>Aunt Betty's Bisquet Truck</h1>
 
 <p>Due Thursday by 11:59pm<br />  Points 50<br />  Submitting a website url<br /><br />
 For our second group project we'll be  building a PHP application that allows a user to select items from a menu as if they are ordering from a food truck.<br />
