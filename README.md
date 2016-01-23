@@ -13,5 +13,5 @@ Due date for this projec is Thursday by 11:59pm.
 
 Possible points: 50
 
-Submission will be a website url
+Submission will be a website url.
 
