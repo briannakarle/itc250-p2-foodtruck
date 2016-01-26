@@ -1,13 +1,10 @@
 <?php
 //index.php
 
-include config.php;
-include functions.php;
-include header.php;
-
-//Aunt Betty's Bisquet Truck
-
-define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
+include 'MenuItem.php';
+include 'config.php';
+include 'functions.php';
+include 'header.php';
        
 if (isset($_POST['submit'])) {//data submitted
    
@@ -18,5 +15,5 @@ if (isset($_POST['submit'])) {//data submitted
    //show virgin form
    
 }
-
-include footer.php;
+echo '</table>';
+include 'footer.php';
