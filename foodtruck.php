@@ -10,6 +10,9 @@ include 'item.php';
 $myItem[] = new Item('Willie Biscuit', 'This one will leave you better than stoned', 5.95, 0);
 $myItem[] = new Item('True Grit Biscuit', 'The one that John Wayne made famous', 7.95, 0);
 $myItem[] = new Item('Dolly Biscuit', 'Double heapins of good lovin food', 8.88, 0);
+
+if(isset($_POST['submit']))
+{
 echo '<pre>';
 var_dump($myItem);
 echo '</pre>';
@@ -50,15 +53,15 @@ for ($x = 0; $x < $max; $x++) {
     
     echo $x;//before $_POST quantity
     
-    $selected_val = $_POST['quantity' . $x];
+    $selected_val = $_POST[$quantity . $x];
     
     echo $selected_val; //selected value
     
-if (isset($_POST["quantity1"])) {
+if (isset($_POST[$quantity])) {
     
     echo $selected_val;
       
- /*if(isset($_POST['submit']))
+if(isset($_POST['submit']))
 {//data submitted
     echo '<pre>';
     var_dump($_POST);
@@ -71,19 +74,19 @@ if (isset($_POST["quantity1"])) {
        <input type="submit" name="submit" value="Submit it!" />
    </form>
    ';
-}*/     
+}   
     
      if ($selected_val = 0) {
             echo '<select id="quantity" . $x>
-            <option $value="0" selected>0</option>
+                <option $value="0" selected>0</option>
                 <option $value="1">1</option>
                 <option $value="2">2</option>';
         };
         if ($selected_val = 1) {
-               echo '<select id="quantity" . $x>
-               <option $value="0">0</option>
-                <option $value="1" selected>1</option>
-                <option $value="2">2</option>';
+            echo '<select id="quantity" . $x>
+            <option $value="0">0</option>
+            <option $value="1" selected>1</option>
+            <option $value="2">2</option>';
         };
         if ($selected_val = 2) {
                echo '<select id="quantity" . $x>
