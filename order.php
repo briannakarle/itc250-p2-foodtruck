@@ -1,6 +1,6 @@
 <?php
 include 'item.php';
-inculde 'menudata.php';
+include 'menudata.php';
 
 
     echo '
@@ -30,8 +30,7 @@ inculde 'menudata.php';
              </tr>
              <tr>
     
-<html>
- <body>'; 
+'; 
 
 $max = sizeof($myItem);
 for ($x = 0; $x < $max; $x++) {
@@ -46,12 +45,9 @@ for ($x = 0; $x < $max; $x++) {
                 echo '<td> ' . $myItem[$x]->name . '</td>'; //item name
                 echo ' <td> ' . $myItem[$x]->description . '</td>';  //item description
                 echo '<td> ' . $myItem[$x]->price . '</td>';  //item price
-                echo '<td> ' . $myItem[$x]->price * $myItem[$x]->quantity . '</td>' ;//price * quantity
+                echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x] . '</td>' ;//price * quantity
                 echo '</tr>';
+                                                           }
+
 ?>
 
- Quantity1 <?php echo $_POST["quantity1"]; ?><br>
- Your email address is: <?php echo $_POST["quantity2"]; ?>
-
- </body>
- </html> 
