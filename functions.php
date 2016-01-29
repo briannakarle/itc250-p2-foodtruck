@@ -23,8 +23,9 @@ function showForm($MenuItemS) {
             $qty[$i][1]="0";
             //var_dump($value);
 			echo '
-			<tr><td><input type="number" name="' . $qty[$i][0] . '" min="0" max="99" value="' . $qty[$i][1] . '" /></td><td>'.$value->name.'</td><td>'.$value->description.'</td><td>'.$value->price.'</td><td><input type="checkbox" name="' . $cb1[$i] ." value=" . $cb1[$i] .'"/>Gravy <input type="checkbox" name="' . $cb2[$i] ." value=" . $cb2[$i] .'" />Jam </td><td>$menuTotal[]</td>
+			<tr><td><input type="number" name="' . $qty[$i][0] . '" min="0" max="99" value="' . $qty[$i][1] . '" /></td><td>'.$value->name.'</td><td>'.$value->description.'</td><td>'.$value->price.'</td><td><input type="checkbox" name="' . $cb1[$i] .'" value="' . $cb1[$i] .'"/>Gravy <input type="checkbox" name="' . $cb2[$i] .'" value="' . $cb2[$i] .'" />Jam </td><td>$menuTotal[]</td>
 			';
+            $i++;
 		}
 	
 	
