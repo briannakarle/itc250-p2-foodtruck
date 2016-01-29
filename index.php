@@ -1,19 +1,22 @@
 <?php
 //index.php
+//a postback form
 
-include 'MenuItem.php';
-include 'config.php';
+define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
+include 'MenuItem.php'; // for $MenuItemS
 include 'functions.php';
-include 'header.php';
-       
-if (isset($_POST['submit'])) {//data submitted
-   
-   //process data and show form again.
-   
-}else{//show form
-   
-   //show virgin form
-   
+// instantiate the menu objects 
+// makeObject() ;
+
+if(isset($_POST['submit'])) // check to see if this is a new presence or a submitted form
+{// case = submitted form
+showForm();
+echo ' <pre>';
+var_dump($_POST);
+echo '<pre>';
+}else{//case = new presence
+ showForm();
+echo ' <pre>';
+var_dump($_POST);
+echo '<pre>';
 }
-echo '</table>';
-include 'footer.php';
