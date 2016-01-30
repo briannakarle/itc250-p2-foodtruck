@@ -19,14 +19,15 @@ include 'item.php';
 $myItem[] = new Item('Willie Biscuit', 'This one will leave you better than stoned', 5.95, 0);
 $myItem[] = new Item('True Grit Biscuit', 'The one that John Wayne made famous', 7.95, 0);
 $myItem[] = new Item('Dolly Biscuit', 'Double heapins of good lovin food', 8.88, 0);
+$myItem[] = new Item('Good, Bad, and Ugly', 'Poached egg, fried egg and scrabbled egg', 9.25, 0);
 
 if(isset($_POST['submit']))
 {//data submitted
-    echo '<pre>';
+   /* echo '<pre>';
     var_dump($_POST);
     var_dump($myItem);
     echo '</pre>';
-    
+    */
     echo '
   <html>
   <head>
@@ -111,7 +112,7 @@ else{//show form
              <tr>';
 $max = sizeof($myItem);
     for ($x = 0; $x < $max; $x++) {
-              echo '<td>
+                echo '<td>
                        <input type="number" name="quantity'. (string)$x . '" min="0" max="5"
                        value = $_POST[quantity' . (string)$x . ']>';
                       
@@ -119,10 +120,8 @@ $max = sizeof($myItem);
                 echo '<td> ' . $myItem[$x]->name . '</td>'; //item name
                 echo ' <td> ' . $myItem[$x]->description . '</td>';  //item description
                 echo '<td> ' . $myItem[$x]->price . '</td>';  //item price
-                echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x]  . '</td>' ; //price * quantity
-                echo '$myItem[$x]  - ' . $myItem[$x]->price . '  quantity - ' . value;
-                                echo '</tr>';
-                };
+                echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x]  . '</td></tr>' ; //price * quantity
+                                };
      
 
     echo '
