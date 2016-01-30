@@ -75,6 +75,8 @@ for ($x = 0; $x < $max; $x++) {
                  echo ' Your GRAND Total:  ' . (string)$total;
     
                  echo '  <input id="orderform" type = "submit" name = "order" value="Place your Order" />';
+                 echo '  <input id="orderform" type = "submit" name = "menu" value="Adust Order" />';
+                
 
     
 }elseif (isset($_POST['order'])) {
@@ -119,17 +121,12 @@ $max = sizeof($myItem);
 
                 echo '<td> ' . $myItem[$x]->name . '</td>'; //item name
                 echo ' <td> ' . $myItem[$x]->description . '</td>';  //item description
-                echo '<td> ' . $myItem[$x]->price . '</td>';  //item price
-                echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x]  . '</td></tr>' ; //price * quantity
-                                };
+                echo '<td> ' . $myItem[$x]->price . '</td></tr>';  //item price
+                /*echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x]  . '</td></tr>' ; //price * quantity */
+                                }; 
      
 
-    echo '
-            <tr> 
-                <td colspan="3">Current charge:</td>
-                <td>$' . $total .  '</td>
-            </tr>
-        </table>';
+      echo '</table>';
       echo '  <input id="orderform" type = "submit" name = "submit" value="Calculate Price" />
     </form>
 </body>
