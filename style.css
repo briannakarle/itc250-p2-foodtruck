@@ -1,0 +1,30 @@
+/* style.css */
+#wrapper {
+    width:80%;
+    max-width:800px;
+    margin:auto;
+}
+h1, h2 {
+    text-align:center;
+}
+h1 {
+    margin: 1em 0 0 0;
+}
+h2 {
+    margin: 0 0 1em 0;
+}
+.right {
+    text-align:right;
+}
+.left {
+    text-align:left;
+}
+.topline {
+    border-top-style:solid;
+}
+.bottomline {
+    border-bottom-style:solid;
+}
+.doublebottomline {
+    border-bottom-style:double;
+}

@@ -7,33 +7,11 @@ class MenuItem
     public $description = '';
     public $price = 0;
     
-    public function __construct($name, $description, $price, $quantity)
+    public function __construct($name, $description, $price)
     {
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
     }
-	
-	public function getName() {
-		return $name;
-		}
-		
-	public function setName($a) {
-		$name = $a;
-	}
-	public function getDescription() {
-		return $description;
-		}
-		
-	public function setDescription($a) {
-		$description = $a;
-	}
-	public function getPrice() {
-		return $price;
-		}
-		
-	public function setPrice($a) {
-		$price = $a;
-	}
 	
 }

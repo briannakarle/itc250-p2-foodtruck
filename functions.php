@@ -1,41 +1,77 @@
 <?php
 // functions.php
 
-function makeObject() {
-	$MenuItemS[] = new MenuItem('Willie Biscuit', 'This one will leave you better than stoned', 5.95, 0);
-	$MenuItemS[] = new MenuItem('True Grit Biscuit', 'The one that John Wayne made famous', 7.95, 0);
-	$MenuItemS[] = new MenuItem('Dolly Biscuit', 'Double heapins of good lovin food', 8.88, 0);	   
-}
-
-function showForm($MenuItemS) {
-	echo '<h1>  Aunt Betty\'s Biscuit Truck</h1>
-		<h2>Made with the freshest flour and lard</h2>
-		<form action="' . THIS_PAGE . '" method="post">
-			<table style="width:100%">
-				<tr><th>QTY</th><th>Biscuit</th><th>Description</th><th>Price</th><th>Extras</th><th>Totals</th><tr>
-		';
-	
+function showForm($MenuItemS) { #display the <form
+    #the table header
+    echo '<form action="' . THIS_PAGE . '" method="post">
+          <table style="width:100%">
+          <tr><th class="left">Quantity</th><th class="left">Biscuit</th><th class="left">Description</th><th class="right">Price</th><th class="right">Totals</th><tr>
+    ';
+    #the menu items - this part allows for a dyamic menu
 		$i=0;
 		foreach( $MenuItemS as $key => $value){
-            $cb1[$i]= "cb1".$i;
-            $cb2[$i]= "cb2".$i;
             $qty[$i][0]= "qty".$i;
-            $qty[$i][1]="0";
-            //var_dump($value);
-			echo '
-			<tr><td><input type="number" name="' . $qty[$i][0] . '" min="0" max="99" value="' . $qty[$i][1] . '" /></td><td>'.$value->name.'</td><td>'.$value->description.'</td><td>'.$value->price.'</td><td><input type="checkbox" name="' . $cb1[$i] .'" value="' . $cb1[$i] .'"/>Gravy <input type="checkbox" name="' . $cb2[$i] .'" value="' . $cb2[$i] .'" />Jam </td><td>$menuTotal[]</td>
-			';
+            #calculations - here we have to differenciate between a first presence or a post back:
+            if (isset($_POST['qty'.$i])) {
+                $qty[$i][1]=$_POST['qty'.$i];
+            }else{
+                $qty[$i][1]=0;
+            } #end of differenciation
+           $menuTotal[$i]=$qty[$i][1] * $value->price;
+           echo '
+                <tr><td><input type="number" name="' . $qty[$i][0] . '" min="0" max="99" value="' . $qty[$i][1] . '" /></td><td>'. $value->name .'</td><td>'.$value->description.'</td><td class="right">'.$value->price.'</td><td class="right">' . $menuTotal[$i] . '</td>
+                ';
+ 
             $i++;
 		}
-	
-	
 
-	echo '		<tr><td colspan="5"><td>TOTAL</td><td>' . $subTotal . '</td></tr>	
-				<tr><td colspan="5"></td><td>TOTAL</td><td>' . $tax . '</td></tr>	
-				<tr><td colspan="5"></td><td>TOTAL</td><td>' . $total . '</td></tr>	
-				<tr><td colspan="4"></td><td colspan="2"><input type = "submit" name = "submit" value="Calculate Price" /></td></tr>
-			</table>
-		</form>
-		';
-	
+    # for the extras we again have to differenciate between a postback and first presence
+
+    $xtraTotal = 0.00;
+    if (isset($_POST['cbGravy'])) {
+        $cbGravy = "checked";
+        $xtraTotal += GRAVY_PRICE;
+    }else{
+        $cbGravy ="";
+    }
+    if (isset($_POST['cbJam'])) {
+        $cbJam = "checked";
+        $xtraTotal += JAM_PRICE;
+    }else{
+        $cbJam = "";
+    }
+    #end of differenciation
+
+    #the extras part - offering gravy and jam
+	echo '<tr><td></td><td><b>Extras</b></td><td><input type="checkbox" name="cbGravy" value="' . $cbGravyPrice .'" ' . $cbGravy . ' />Gravy ($.50) <input type="checkbox" name="cbJam" value="'. $cbJamPrice . '" ' .$cbJam .'/>Jam ($1.00)</td><td><td class="right">' . $xtraTotal . '</td></tr>
+    ';
+    
+     #this part of the calculation is always the same
+    $subTotal = Sum ($menuTotal)+ $xtraTotal;
+    $tax = $subTotal * .1;
+    $total = $subTotal + $tax;
+    
+    #the totals part - starting with the subtotal ending with the grand total.
+	echo '<tr><td colspan="3"></td><td class="right topline"><b>SubTotal:</b></td><td class="right topline">' . $subTotal . '</td></tr>	
+	<tr><td colspan="3"></td><td class="right bottomline"><b>Tax:</b></td><td class="right bottomline">' . $tax . '</td></tr>	
+	<tr><td colspan = "2"><input type = "submit" name = "submit" value="Calculate Price" /></td><td></td><td  class="right doublebottomline"><b>Total:</b><td class="right doublebottomline"><b>' . $total . '</b></td></tr>
+	</table>
+	</form>
+	';
+}
+
+function sum($values)
+{
+    $sum =0;
+    foreach ($values as $value){
+        $sum += $value;
+    }
+    return $sum;
+}
+
+function showVarDump($arg) {
+    echo '<p>from showVarDump()</p>';
+    echo ' <pre>';
+    var_dump($arg);
+    echo '<pre>';  
 }
