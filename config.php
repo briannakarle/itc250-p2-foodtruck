@@ -9,7 +9,7 @@ switch(THIS_PAGE) #set parameters for page (title, description, headings)
 		$pageTitle="P2: Food Truck";
 		$pageDescription="ITC250 second group project.";
 		$pageID="Aunt Betty's Bisquet Truck";
-		$pageBrand="Made with the freshest flour and lard.";
+		$pageBrand="Made with the freshest flour and lard";
 		break;
 
 	default: 

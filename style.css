@@ -1,8 +1,16 @@
 /* style.css */
+body {
+    background-image:url('bisquet.jpg');
+    background-size:cover;
+}
 #wrapper {
     width:80%;
     max-width:800px;
     margin:auto;
+    background-color:white;
+    padding: 1em;
+    border:2px solid;
+    border-radius: 25px;
 }
 h1, h2 {
     text-align:center;
