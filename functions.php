@@ -5,7 +5,7 @@ function showForm($MenuItemS) { #display the <form
     #the table header
     echo '<form action="' . THIS_PAGE . '" method="post">
           <table style="width:100%">
-          <tr><th class="left">Quantity</th><th class="left">Biscuit</th><th class="left">Description</th><th class="right">Price</th><th class="right">Totals</th><tr>
+          <tr><th class="left">Quantity</th><th class="left">Biscuit</th><th class="left">Description</th><th class="right">Price Each</th><th class="right">Totals</th><tr>
     ';
     #the menu items - this part allows for a dyamic menu
 		$i=0;
@@ -54,7 +54,7 @@ function showForm($MenuItemS) { #display the <form
     #the totals part - starting with the subtotal ending with the grand total.
 	echo '<tr><td colspan="3"></td><td class="right topline"><b>SubTotal:</b></td><td class="right topline">' . $subTotal . '</td></tr>	
 	<tr><td colspan="3"></td><td class="right bottomline"><b>Tax:</b></td><td class="right bottomline">' . $tax . '</td></tr>	
-	<tr><td colspan = "2"><input type = "submit" name = "submit" value="Calculate Price" /></td><td></td><td  class="right doublebottomline"><b>Total:</b><td class="right doublebottomline"><b>' . $total . '</b></td></tr>
+	<tr><td colspan = "2"></td><td><input id="submit" type = "submit" name = "submit" value="Calculate Price" /></td><td  class="right doublebottomline"><b>Total:</b><td class="right doublebottomline"><b>' . $total . '</b></td></tr>
 	</table>
 	</form>
 	';

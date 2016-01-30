@@ -11,6 +11,11 @@ body {
     padding: 1em;
     border:2px solid;
     border-radius: 25px;
+    box-shadow: -10px 10px 5px #8f8f8f ;
+    background-color:#FFCDA4;
+}
+#submit{
+    font-size:2em;
 }
 h1, h2 {
     text-align:center;
