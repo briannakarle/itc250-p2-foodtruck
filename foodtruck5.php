@@ -63,19 +63,38 @@ $total = 0;
 $max = sizeof($myItem);
     
 for ($x = 0; $x < $max; $x++) {
-              echo '<td>' .  $_POST["quantity" . (string)$x] . '</td>';
+                echo '<td>' .  $_POST["quantity" . (string)$x] . '</td>';
                       
                 echo '<td> ' . $myItem[$x]->name . '</td>'; //item name
                 echo ' <td> ' . $myItem[$x]->description . '</td>';  //item description
                 echo '<td> ' . $myItem[$x]->price . '</td>';  //item price
-                $total = $total + $myItem[$x]->price * $_POST["quantity" . (string)$x];
+                $subtotal = $subtotal + $myItem[$x]->price * $_POST["quantity" . (string)$x];
+                $tax = $subtotal * .096;// * $_POST["quantity" . (string)$x];
+                $total = $subtotal + $tax;
+                setlocale(LC_MONETARY,"en_US");
                 echo '<td> ' . $myItem[$x]->price * $_POST["quantity" . (string)$x] . '</td>' ;//price * quantity
                 echo '</tr>';
                 };
-                 echo ' Your GRAND Total:  ' . (string)$total;
-    
-                 echo '  <input id="orderform" type = "submit" name = "order" value="Place your Order" />';
-                 echo '  <input id="orderform" type = "submit" name = "menu" value="Adust Order" />';
+                echo '<tr>
+                        <td colspan="3"></td>
+                        ' . money_format("<td>Subtotal</td><td> %n", $subtotal) . '</td>
+                    </tr>	
+				    <tr>
+                        <td colspan="3"></td>
+                        ' . money_format("<td>Tax</td><td> %n", $tax) . '</td>
+                    </tr>	
+				    <tr>
+                        <td colspan="3"></td>
+                        ' . money_format("<td>Tax</td><td> %n", $total) . '</td>
+                    </tr>	
+				    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="2"><input id="orderform" type = "submit" name = "order" value="Place your Order" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="2"><input id="orderform" type = "submit" name = "menu" value="Adust Order" /></td>
+                    </tr>';
                 
 
     
