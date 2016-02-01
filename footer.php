@@ -1,3 +1,3 @@
-        </div> <!-- wraper -->
+        </div> <!-- wrapper -->
     </body>
 </html>

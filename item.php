@@ -1,8 +1,7 @@
 <?php
 //MenuItem.php
-class MenuItem 
+class Item 
 {
-    
     public $name = '';
     public $description = '';
     public $price = 0;

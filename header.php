@@ -7,6 +7,6 @@
     </head>
     <body>
         <div id="wrapper">
-            <h1><?=$pageID?></h1>
+            <h1><?=$pageBanner?></h1>
             <h2><?=$pageBrand?></h2>
 					
