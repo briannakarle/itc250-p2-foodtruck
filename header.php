@@ -1,16 +1,12 @@
-<?php
-//MenuItem.php
-class Item 
-{
-    public $name = '';
-    public $description = '';
-    public $price = 0;
-    
-    public function __construct($name, $description, $price)
-    {
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-    }
-	
-}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1><?=$pageBanner?></h1>
+            <h2><?=$pageBrand?></h2>
+					
