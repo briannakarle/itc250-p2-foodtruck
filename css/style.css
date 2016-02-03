@@ -1,0 +1,119 @@
+/* style.css */
+/*body {
+    background-image:url('bisquet.jpg');
+    background-size:cover;
+}
+#wrapper {
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    background-color:white;
+    padding: 1em;
+    border:2px solid;
+    border-radius: 25px;
+    box-shadow: -5px 5px  #8f8f8f ;
+    background-color:#FFCDA4;
+}
+.submit{
+    font-size:1.2em;
+}
+h1, h2 {
+    text-align:center;
+}
+h1 {
+    margin: 1em 0 0 0;
+}
+h2 {
+    margin: 0 0 1em 0;
+}
+.right {
+    text-align:right;
+}
+.left {
+    text-align:left;
+}
+.topline {
+    border-top-style:solid;
+}
+.bottomline {
+    border-bottom-style:solid;
+}
+.doublebottomline {
+    border-bottom-style:double;
+}
+*/
+
+body {
+    background-image:url('../images/bisquet.jpg');
+    background-size:cover;
+}
+
+#wrapper {
+    font-size: 100%;
+    font-family: arial, sans-serif;
+    line-height: 150%;
+    width:80%;
+    margin:1.5em auto;
+}
+
+header {
+    width:100%;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    width:100%;
+    text-align:center;
+}
+
+h1 {
+    color: #1a3554;
+
+}
+
+h2 {
+    color: #356dad;
+    font-size: 1.15em;
+}
+
+p.thanks {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding: 50px;
+    text-align: center;
+    width: 100%;
+
+}
+table{
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+    margin: 1em auto;
+    background-color: #fff;
+}
+
+th {
+    background: #1a3554 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+td, th {
+    border: 1px solid #eee;
+    padding: 5px;
+}
+input.button {
+    background-color: #356dad;
+    border: medium none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
