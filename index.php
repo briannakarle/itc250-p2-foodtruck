@@ -17,11 +17,14 @@
  * @todo none
  */
 
-
-
 include 'includes/config.php';    # set constants,  objects, and settings
 include 'includes/functions.php'; # common functions 
-
 include 'includes/header.php';
-showForm($Bisquet);
+
+if (isset($_POST['order'])) {
+	showThanks();
+}else{
+	showForm($Bisquet);
+	}
+
 include 'includes/footer.php';
