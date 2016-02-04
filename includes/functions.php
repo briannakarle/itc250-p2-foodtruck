@@ -3,7 +3,16 @@
  //display the menu form 
 
 
-
+/**
+  * The showThanks function posts back a little "Thank you" and option to place another order
+  *
+  * This function occurs after an order is places.  the form disappears, and a section including 
+  * only the thank you and place new order button appear.  When "Place a New Order" is clicked, 
+  * the order form will re-appear.
+  *
+  *
+  * @return "Thank You"
+  */
 function showThanks()
 {
     echo '
@@ -16,6 +25,35 @@ function showThanks()
     </section>
 	';
 }
+
+
+
+/**
+  * The showForm function creates a dynamic form and calculates cost
+  *
+  * 1. Show table headers of the form
+  * 2. Create dynamic menu
+  *     a. Checkboxes- For each menu item, create the arrays that represents quantity, xtrGravy, xtrMeal
+  *     b. Differentiate between a first presence or a post back.  
+  *     c. Calculations 
+  *         i. Total is quantity times the price plus gravy and meal charge
+  *         ii. Subtotal is the total of the sum of the menu items plus the extras
+  *         iii. Tax is subtotal multiplied by Seattle sales tax, which is 9.6%
+  *         iv. Total is the subtotal plus the tax.
+  *     d.  Show totals- default is $0.00 for all
+  *     e.  Show buttons depending on button that is pressed
+  *         i.  If "Order" button is pressed, hide "Submit" and "Confirm". Show " Thank you for your order"
+  *         ii.  If Submit/calculate order button is pressed, show all buttons and no "Thank you".
+  *         iii.  Otherwise, just the submit button is visible
+  *     f.  html for buttons
+  *
+  * @param string $myArgument With a *description* of this argument, these may also
+  *    span multiple lines.
+  *
+  * @return form, buttons, and calculated values
+  *
+  *@todo fill in parameters in documentation
+  */
 
  function showForm($MenuItem) 
  { # show table headers of the form
@@ -34,6 +72,7 @@ function showThanks()
      ';
 
      #MENU LIST - this part allows for a dynamic menu
+     
      $i=0; #i is for iteration
 
      foreach($MenuItem as $key => $value)  #checkboxes
@@ -81,7 +120,7 @@ function showThanks()
                 </td>
                 <td>'. $value->name .'</td>
                 <td>'.$value->description.'</td>
-                <td class="right">'.$value->price.'</td>
+                <td>'.$value->price.'</td>
                 <td>
                     <input type="checkbox" name="' . $xtrGravy[$i][0] . '" min="0" max="99" value=""' . $xtrGravy[$i][1] . ' />$0.50 each
                 </td>
@@ -116,7 +155,7 @@ function showThanks()
 
      #this part of the calculation is always the same
      $subTotal = Sum ($menuTotal)+ $xtraTotal;
-     $tax = $subTotal * .1;
+     $tax = $subTotal * .096;
      $total = $subTotal + $tax;
 
      #the totals part - starting with the subtotal ending with the grand total.
@@ -141,28 +180,28 @@ function showThanks()
      #SUBMIT BUTTONS set submit buttons according to type of submission
      if (isset($_POST['order'])) 
      {# buttons are hidden and thanks for order visible
-        $visableSubmit = "hidden";
-        $visableConfirm = "hidden";
-        $visableThankYou = "<h3>Thanks for your order.</h3>";
+        $visibleSubmit = "hidden";
+        $visibleConfirm = "hidden";
+        $visibleThankYou = "<h3>Thanks for your order.</h3>";
      }elseif(isset($_POST['submit'])) 
      { #all buttons visible and thanks for order hidden
-        $visableSubmit = "";
-        $visableConfirm = "";
-        $visableThankYou = "";
+        $visibleSubmit = "";
+        $visibleConfirm = "";
+        $visibleThankYou = "";
         $re = "Re-";
      }else{ #just submit button visible
-        $visableSubmit = "";
-        $visableConfirm = "hidden";
-        $visableThankYou = "";
+        $visibleSubmit = "";
+        $visibleConfirm = "hidden";
+        $visibleThankYou = "";
         $re = "";
      }
 
      echo '
             <tr>
-                <td colspan = "7"><input class="button" type = "submit" name = "submit" value="' . $re . 'Calculate Price" ' . $visableSubmit . ' /></td>
+                <td colspan = "7"><input class="button" type = "submit" name = "submit" value="' . $re . 'Calculate Price" ' . $visibleSubmit . ' /></td>
             </tr>
             <tr>
-                <td colspan = "7"><input class="button" type = "submit" name = "order" value="Confirm Order" ' . $visableConfirm . ' /></td>
+                <td colspan = "7"><input class="button" type = "submit" name = "order" value="Confirm Order" ' . $visibleConfirm . ' /></td>
             </tr>
         </table>
      </form>
@@ -170,7 +209,14 @@ function showThanks()
  }
 
 
- # returns the sum of elements in the array $values
+/**
+  * The sum function returns the sum of elements in the array $values
+  *
+  *
+  *
+  * @return $sum
+  */
+
  function sum($values)
  {
     $sum =0;
@@ -181,6 +227,14 @@ function showThanks()
     return $sum;
  }
 
+
+/**
+  * The showVarDump is a utility function for testing, which shows values of variables using vardump
+  *
+  *
+  *
+  * @return vardump
+  */
  # a utility function to test by showing values of variables using var_dump()
  function showVarDump($arg) 
  {

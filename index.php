@@ -1,8 +1,14 @@
 <?php
 //index.php
 /**
- * index.php has a form for ordering biscuits.  When the form is submitted, it posts back to itself.  
+ * index.php has a form for ordering biscuits.   
  * 
+ * The form has several available menu items, as well as add-ons.  First, the user 
+ * will select what they want, and calculate the price.  It then posts back to itself
+ * with the calculated total.  The user has the option to submit the order, or 
+ * recalculate.  When the order is submitted, it posts back to the page with a thank 
+ * you message, and an option to submit a new order.  If the user chooses to recalculate,
+ * it starts over.   
  *
  * @package LARGE_PIECE_OF_PROGRAM
  * @subpackage SUB_PART_OF_PROGRAM
@@ -10,11 +16,12 @@
  * @author Ed Brovick <ed@brovick.com>
  * @author Brianna Karle <briannarkarle@gmail.com>
  * @version 1.0 2016/02/02 
- * @link http://www.example.com/ 
+ * @link App: http://briannakarle.com/itc250/itc250-p2-foodtruck/index.php 
+ * @link Github repo: https://github.com/briannakarle/itc250-p2-foodtruck
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see related_file.php
  * @see other_related_file.php
- * @todo none
+ * @todo finish documentation-  index, function parameters, other pages.
  */
 
 include 'includes/config.php';    # set constants,  objects, and settings

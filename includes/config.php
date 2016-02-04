@@ -8,7 +8,7 @@ define('THIS_PAGE', basename($_SERVER['PHP_SELF'])); // this defines the current
 setlocale(LC_MONETARY, 'en_US'); #for use in formatting the decmal points for money
 
 //instantiate the Bisquet objects 
-include 'includes/item.php';  // class for $MenuItemS
+include 'includes/MenuItem.php';  // class for $MenuItemS
 $Bisquet[]= new Item("Che' Bisquet", "The one that everyone is talking about.",1.95);
 $Bisquet[]= new Item("Willie Bisquet", "This one will leave you better than stoned.",5.95);
 $Bisquet[]= new Item("True Grit Bisquet", "The one John Wayne made famous.",7.95);

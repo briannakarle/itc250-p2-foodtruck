@@ -9,7 +9,8 @@
 *
 *<code>
 * $Bisquet[]= new Item("Che' Bisquet", "The one that everyone is talking about.",1.95);
-INCLUDE 
+*include 'includes/MenuItem.php'; 
+*function showForm($MenuItem) 
 *</code>
 *
 * @todo none
