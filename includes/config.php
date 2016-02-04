@@ -26,8 +26,6 @@ switch(THIS_PAGE)
 	case "index.php":
 		$pageTitle="P2: Food Truck";
 		$pageDescription="ITC250 second group project.";
-		$pageBanner="Aunt Betty's Bisquet Truck";
-		$pageBrand="Made with the freshest flour and lard";
 		break;
 
 	default: 
