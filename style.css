@@ -1,11 +1,12 @@
 /* style.css */
+
 body {
     background-image:url('bisquet.jpg');
     background-size:cover;
 }
 #wrapper {
     width:80%;
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
     background-color:white;
     padding: 1em;
@@ -14,6 +15,7 @@ body {
     box-shadow: -5px 5px  #8f8f8f ;
     background-color:#FFCDA4;
 }
+
 .submit{
     font-size:1.2em;
 }
@@ -32,6 +34,9 @@ h2 {
 .left {
     text-align:left;
 }
+.center {
+	text-align:center;
+}
 .topline {
     border-top-style:solid;
 }
@@ -40,4 +45,46 @@ h2 {
 }
 .doublebottomline {
     border-bottom-style:double;
+}
+ 
+        p.thanks {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            padding: 50px;
+            text-align: center;
+            width: 100%;
+            
+        }
+        table{
+            border: 2px solid #ccc;
+            border-collapse: collapse;
+            margin: 1em auto;
+        }
+        th {
+            background: #1a3554 none repeat scroll 0 0;
+            color: #fff;
+            font-size: 1.25em;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        td, th {
+            border: 1px solid #eee;
+            padding: 7px 10px;
+        }
+        input.button {
+            background-color: #356dad;
+            border: medium none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            padding: 10px;
+            text-transform: uppercase;
+            width: 100%;
+                text-align:center;
+
+        }
+#reload {
 }
