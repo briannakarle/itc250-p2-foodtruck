@@ -1,11 +1,38 @@
 <?php
 # config.php
+/**
+ * config.php contains settings that will be applied to entire app   
+ * 
+ *The config file
+ *  1.  Defines current file name
+ *  2.  Format monetary type
+ *  3.  Insantiate biscuit objects for the MenuItem class
+ *  4.  Define constants
+ *      a.  Gravy
+ *       b.  Meal
+ *   5.  Create a switch, just in case additional pages are added later
+ *       a.  Create a dynamic title
+ *       b.  Create a dynamic description
+ *
+ * @package itc250_p2_foodtruck
+ * @author Thomas Karchesy <tkarchesy@gmail.com>
+ * @author Ed Brovick <ed@brovick.com>
+ * @author Brianna Karle <briannarkarle@gmail.com>
+ * @version 1.0 2016/02/02 
+ * @link App: http://briannakarle.com/itc250/itc250-p2-foodtruck/index.php 
+ * @link Staging Area: https://docs.google.com/document/d/1UTRfRWKYdKOKimCZd1oRzVTSKSXVe4bN8KZIHfo9ksw/edit?usp=sharing
+ * @link Github repo: https://github.com/briannakarle/itc250-p2-foodtruck
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see 'index.php'
+ * @see 'includes/MenuItem.php'
+ * @todo add google doc link
+ */
 
 //identify the page
 define('THIS_PAGE', basename($_SERVER['PHP_SELF'])); // this defines the current file name
 
 //settings
-setlocale(LC_MONETARY, 'en_US'); #for use in formatting the decmal points for money
+setlocale(LC_MONETARY, 'en_US'); #for use in formatting the decimal points for money
 
 //instantiate the Bisquet objects 
 include 'includes/MenuItem.php';  // class for $MenuItemS

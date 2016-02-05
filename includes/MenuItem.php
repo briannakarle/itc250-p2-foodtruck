@@ -8,15 +8,26 @@
 * the menu attributes will be loaded.  
 *
 *<code>
-* $Bisquet[]= new Item("Che' Bisquet", "The one that everyone is talking about.",1.95);
+* $Bisquet[]= new MenuItem("Che' Bisquet", "The one that everyone is talking about.",1.95);
 *include 'includes/MenuItem.php'; 
 *function showForm($MenuItem) 
 *</code>
 *
-* @todo none
+* @package menu_item
+* @author Thomas Karchesy <tkarchesy@gmail.com>
+* @author Ed Brovick <ed@brovick.com>
+* @author Brianna Karle <briannarkarle@gmail.com>
+* @version 1.0 2016/02/02 
+* @link App: http://briannakarle.com/itc250/itc250-p2-foodtruck/index.php 
+* @link Staging Area: https://docs.google.com/document/d/1UTRfRWKYdKOKimCZd1oRzVTSKSXVe4bN8KZIHfo9ksw/edit?usp=sharing
+* @link Github repo: https://github.com/briannakarle/itc250-p2-foodtruck
+* @license http://www.apache.org/licenses/LICENSE-2.0
+* @see 'includes/config.php'
+* @see 'includes/functions.php'
+* @todo add google doc link
 */
 
-//Item.php
+//MenuItem.php
 class MenuItem 
 {
     public $name = '';
