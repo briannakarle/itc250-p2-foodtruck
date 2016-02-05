@@ -32,8 +32,8 @@ include 'includes/header.php';
 
 if (isset($_POST['order'])) {
 	showThanks();
-}else{
-	showForm($Bisquet);
+    }else{
+	showForm($Biscuit);
 	}
 
 include 'includes/footer.php';

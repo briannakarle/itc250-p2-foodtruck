@@ -1,5 +1,5 @@
 <?php
-
+//header.php
 /**
  * header.php Is the head of the food truck app   
  * 
@@ -34,4 +34,4 @@ echo '
             <h1>  Aunt Betty\'s Biscuit Truck</h1>
             <h2>Made with the freshest flour and lard</h2>
         </header>
-';		
+';

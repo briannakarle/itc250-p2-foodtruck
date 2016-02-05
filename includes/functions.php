@@ -9,38 +9,20 @@
  *          showVarDump($arg);
  *          
  *
- * @package page-level-package
+ * @package itc250_p2_foodtruck
  * @subpackage No subpackage
  * @author Thomas Karchesy tkarch01@seattlecentral.edu, 
- * @author Brianne Karle bkarle01@seattlecentral.edu, 
+ * @author Brianna Karle bkarle01@seattlecentral.edu, 
  * @author Ed Brovick ed@brovick.com
  * @version 1.0 2016/02/02 
- * @link https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fbriannakarle%2Fitc250-p2-foodtruck.git  
+ * @link App: http://briannakarle.com/itc250/itc250-p2-foodtruck/index.php 
+ * @link Staging Area: https://docs.google.com/document/d/1UTRfRWKYdKOKimCZd1oRzVTSKSXVe4bN8KZIHfo9ksw/edit?usp=sharing
+ * @link Github repo: https://github.com/briannakarle/itc250-p2-foodtruck
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @see called my index.php
  *
  * @todo none
  */
-
-
-
-/**
- * file.php does blah, blah, blah
- * 
- * In addition it does blah.
- *
- * @package LARGE_PIECE_OF_PROGRAM
- * @subpackage SUB_PART_OF_PROGRAM
- * @author Your Name <you@example.com>
- * @version 1.0 2015/04/30 
- * @link http://www.example.com/ 
- * @license http://www.apache.org/licenses/LICENSE-2.0
- * @see related_file.php
- * @see other_related_file.php
- * @todo none
- */
-
-
 
 
 /**
@@ -53,6 +35,7 @@
   *
   * @return "Thank You"
   */
+
 function showThanks()
 {
     echo '
@@ -115,8 +98,8 @@ function showThanks()
      
      $i=0; #i is for iteration
 
-     foreach($MenuItem as $key => $value)  #checkboxes
-     { #create the arrays that represents quantity, xtrGravy, xtrMeal
+     foreach($MenuItem as $key => $value){  #checkboxes
+      #create the arrays that represents quantity, xtrGravy, xtrMeal
          #$arr[0]=name [0]=value (number or state=checked/unchecked)
             $quantity[$i][0]= "quantity".$i;
             $xtrGravy[$i][0]= "xtrGravy".$i;
@@ -125,27 +108,24 @@ function showThanks()
 
          #Set values - here we have to differentiate between a first presence or a post back:
 
-         if (isset($_POST['quantity'.$i])) 
-         { #post back number of item
+         if (isset($_POST['quantity'.$i])) { #post back number of item
             $quantity[$i][1]=$_POST['quantity'.$i];
-         }else{ #first presence
+         } else { #first presence
             $quantity[$i][1]=0;
          } #end of differentiation
 
-         if (isset($_POST['xtrGravy'.$i])) 
-         { #post back gravy checkbox
+         if (isset($_POST['xtrGravy'.$i])) { #post back gravy checkbox
             $xtrGravy[$i][1]="checked";
             $xtrGravy[$i][2]=GRAVY_PRICE;
-         }else{ #first presence
+         } else { #first presence
             $xtrGravy[$i][1]="";
             $xtrGravy[$i][2]=0;
          } #end of differentiation
 
-         if (isset($_POST['xtrMeal'.$i])) 
-         { #post back meal checkbox
+         if (isset($_POST['xtrMeal'.$i])) { #post back meal checkbox
             $xtrMeal[$i][1]="checked";
             $xtrMeal[$i][2]=MEAL_UPGRADE;
-         }else{ #first presence
+         } else { #first presence
             $xtrMeal[$i][1]="";
             $xtrMeal[$i][2]=0;
          } #end of differenciation
@@ -158,7 +138,7 @@ function showThanks()
                 <td>
                     <input type="number" name="' . $quantity[$i][0] . '" min="0" max="99" value="' . $quantity[$i][1] . '" /> 
                 </td>
-                <td>'. $value->name .'</td>
+                <td>'.$value->name .'</td>
                 <td>'.$value->description.'</td>
                 <td>'.$value->price.'</td>
                 <td>
@@ -176,19 +156,17 @@ function showThanks()
      # for the extras we again have to differentiate between a postback and first presence
      $xtraTotal = 0.00;
 
-     if (isset($_POST['cbGravy'])) 
-     {#Gravy is checked
+     if (isset($_POST['cbGravy'])) {#Gravy is checked
         $cbGravy = "checked";
         $xtraTotal += GRAVY_PRICE;
-     }else{ #Gravy is empty
+     } else { #Gravy is empty
         $cbGravy ="";
      }
 
-     if (isset($_POST['cbUpGrade'])) 
-     {#Meal is checked
+     if (isset($_POST['cbUpGrade'])) {#Meal is checked
         $cbUpGrade = "checked";
         $xtraTotal += MEAL_UPGRADE;
-     }else{ #meal is empty
+     } else { #meal is empty
         $cbUpGrade = "";
      }
      #end of differentiation
@@ -218,18 +196,16 @@ function showThanks()
      ';
 
      #SUBMIT BUTTONS set submit buttons according to type of submission
-     if (isset($_POST['order'])) 
-     {# buttons are hidden and thanks for order visible
+     if (isset($_POST['order'])) {# buttons are hidden and thanks for order visible
         $visibleSubmit = "hidden";
         $visibleConfirm = "hidden";
         $visibleThankYou = "<h3>Thanks for your order.</h3>";
-     }elseif(isset($_POST['submit'])) 
-     { #all buttons visible and thanks for order hidden
+     } elseif (isset($_POST['submit'])) { #all buttons visible and thanks for order hidden
         $visibleSubmit = "";
         $visibleConfirm = "";
         $visibleThankYou = "";
         $re = "Re-";
-     }else{ #just submit button visible
+     } else { #just submit button visible
         $visibleSubmit = "";
         $visibleConfirm = "hidden";
         $visibleThankYou = "";
@@ -260,7 +236,7 @@ function showThanks()
  function sum($values)
  {
     $sum =0;
-    foreach ($values as $value){
+    foreach ($values as $value) {
         $sum += $value;
     }
      
@@ -276,7 +252,9 @@ function showThanks()
   * @return does not really return anything, but delivers to output (in this case the HTML reader) the
   *     the values of all the arguments.
   */
+
  # a utility function to test by showing values of variables using var_dump()
+
  function showVarDump($arg) 
  {
      echo '<p>from showVarDump()</p>';

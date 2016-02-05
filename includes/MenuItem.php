@@ -1,6 +1,7 @@
 <?php
+
+//MenuItem.php
 /**
-*MenuItem.php
 *
 *MenuItem class
 *
@@ -8,7 +9,7 @@
 * the menu attributes will be loaded.  
 *
 *<code>
-* $Bisquet[]= new MenuItem("Che' Bisquet", "The one that everyone is talking about.",1.95);
+* $Biscuit[]= new MenuItem("Che' Biscuit", "The one that everyone is talking about.",1.95);
 *include 'includes/MenuItem.php'; 
 *function showForm($MenuItem) 
 *</code>
@@ -27,7 +28,6 @@
 * @todo add google doc link
 */
 
-//MenuItem.php
 class MenuItem 
 {
     public $name = '';
@@ -40,5 +40,4 @@ class MenuItem
         $this->description = $description;
         $this->price = $price;
     }
-	
 }
