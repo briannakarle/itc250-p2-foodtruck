@@ -1,6 +1,46 @@
 <?php
- // functions.php
- //display the menu form 
+ /**
+ * functions.php is the repository for all the functions used in the foodtruck application
+ * 
+ * Functions has the following functions in this file .
+ *          showThanks();
+ *          showForm($MenuItem);
+ *          sum($values);
+ *          showVarDump($arg);
+ *          
+ *
+ * @package page-level-package
+ * @subpackage No subpackage
+ * @author Thomas Karchesy tkarch01@seattlecentral.edu, 
+ * @author Brianne Karle bkarle01@seattlecentral.edu, 
+ * @author Ed Brovick ed@brovick.com
+ * @version 1.0 2016/02/02 
+ * @link https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fbriannakarle%2Fitc250-p2-foodtruck.git  
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see called my index.php
+ *
+ * @todo none
+ */
+
+
+
+/**
+ * file.php does blah, blah, blah
+ * 
+ * In addition it does blah.
+ *
+ * @package LARGE_PIECE_OF_PROGRAM
+ * @subpackage SUB_PART_OF_PROGRAM
+ * @author Your Name <you@example.com>
+ * @version 1.0 2015/04/30 
+ * @link http://www.example.com/ 
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @see related_file.php
+ * @see other_related_file.php
+ * @todo none
+ */
+
+
 
 
 /**
@@ -42,17 +82,17 @@ function showThanks()
   *         iv. Total is the subtotal plus the tax.
   *     d.  Show totals- default is $0.00 for all
   *     e.  Show buttons depending on button that is pressed
-  *         i.  If "Order" button is pressed, hide "Submit" and "Confirm". Show " Thank you for your order"
+  *         i.  If "Order" button is pressed, hide "Submit" and "Confirm". Show " Thank you for your order" 
   *         ii.  If Submit/calculate order button is pressed, show all buttons and no "Thank you".
   *         iii.  Otherwise, just the submit button is visible
   *     f.  html for buttons
   *
-  * @param string $myArgument With a *description* of this argument, these may also
-  *    span multiple lines.
+  * @param array $MenuItem.  THis is an array with all the menu items that will show up on the menu list.   
+  *   
   *
-  * @return form, buttons, and calculated values
+  * @return no return value, but delivers HTML for form based on the menu items in MenuItem structure.
   *
-  *@todo fill in parameters in documentation
+  * @todo No items identified at this time.
   */
 
  function showForm($MenuItem) 
@@ -210,11 +250,11 @@ function showThanks()
 
 
 /**
-  * The sum function returns the sum of elements in the array $values
+  * The sum function adds all the values passed in teh $values array
   *
   *
   *
-  * @return $sum
+  * @return $sum (a total of all the values passed to sum)
   */
 
  function sum($values)
@@ -233,7 +273,8 @@ function showThanks()
   *
   *
   *
-  * @return vardump
+  * @return does not really return anything, but delivers to output (in this case the HTML reader) the
+  *     the values of all the arguments.
   */
  # a utility function to test by showing values of variables using var_dump()
  function showVarDump($arg) 
